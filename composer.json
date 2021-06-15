@@ -1,6 +1,6 @@
 {
-    "name": "apiclub/php-api",
-    "description": "PHP SDK for APICLUB APIs",
+    "name": "apiclub/apiclub-php-sdk",
+    "description": "PHP SDK for APICLUB",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,9 +9,9 @@
         }
     ],
     "autoload": {
-		"psr-4": {
-			"Apiclub\\": "src/Apiclub"
-		}
+	    "psr-4": {
+		    "Apiclub\\": "src/Apiclub"
+	    }
 	},
     "minimum-stability": "stable",
     "require": {
