@@ -133,16 +133,6 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  $sms_status = $api->sms_status('xxxxxxxx');  //for SMS Status API 
  ```
 
-## Help and Docs
-
-For Support Please refer to :
-
-- [Discord](https://discord.gg/hkNKaJZdzb)
-- [Telegram](https://t.me/joinchat/WTnBUHaiRRARjHsC)
-- [Youtube](https://www.youtube.com/channel/UCaUC5DsT0wq33QFH8mQuVHQ)
-- [Email](mailto:info@apiclub.in)
-- [Help Center](https://help.apiclub.in)
-
 ## List of all APIs offered by APIclub
 
 | Version | Name| Description|
@@ -176,4 +166,12 @@ For Support Please refer to :
 | v1 | Send SMS | Send BULK SMS without any DLT registeration
 | v1 | Check SMS Status | Fetch the status of sent SMS by passing SMS ID received on response of Send SMS API. |
 
+## Help and Docs
 
+For Support Please refer to :
+
+- [Discord](https://discord.gg/hkNKaJZdzb)
+- [Telegram](https://t.me/joinchat/WTnBUHaiRRARjHsC)
+- [Youtube](https://www.youtube.com/channel/UCaUC5DsT0wq33QFH8mQuVHQ)
+- [Email](mailto:info@apiclub.in)
+- [Help Center](https://help.apiclub.in)
