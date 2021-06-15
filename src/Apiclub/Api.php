@@ -1,10 +1,10 @@
 <?php
 /**
  * PHP Wrapper for Apiclub API
- * GitHub: https://github.com/Apiclub/php-api
+ * GitHub: https://github.com/Apiclub/api-php-sdk
  * License: MIT License
  *
- * @author APIclub (@apiclub, info@apiclub.in)
+ * @author APIclub (info@apiclub.in)
  * @version 1.0.0
  */
 
