@@ -81,8 +81,13 @@ class Api
     }
     
     public function dl_info($key) {
-        $data = 'dl_no='.$key;
-        return $this->sendRequest($this->base_url.__FUNCTION__, $data, true);
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'vehicleId' => $key,
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
     }
     
     public function challan_info($key) {
