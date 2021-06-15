@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP Wrapper for Apiclub API
+ * PHP SDK for Apiclub API
  * GitHub: https://github.com/Apiclub/api-php-sdk
  * License: MIT License
  *
