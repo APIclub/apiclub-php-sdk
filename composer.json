@@ -1,0 +1,20 @@
+{
+    "name": "apiclub/php-api",
+    "description": "PHP SDK for APICLUB APIs",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIclub"
+        }
+    ],
+    "autoload": {
+		"psr-4": {
+			"Apiclub\\": "src/Apiclub"
+		}
+	},
+    "minimum-stability": "stable",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3"
+    }
+}
