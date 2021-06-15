@@ -10,7 +10,7 @@
     ],
     "autoload": {
 	    "psr-4": {
-		    "Apiclub\\": "src/Apiclub"
+	    	"Apiclub\\": "src/Apiclub"
 	    }
 	},
     "minimum-stability": "stable",
