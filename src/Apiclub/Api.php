@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP SDK for Apiclub API
+ * PHP SDK for APIclub API
  * GitHub: https://github.com/Apiclub/api-php-sdk
  * License: MIT License
  *
