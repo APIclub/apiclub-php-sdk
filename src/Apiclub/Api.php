@@ -23,7 +23,7 @@ use Psr\Http\Message\ResponseInterface;
 use Apiclub\Exceptions\SocketException;
 use function GuzzleHttp\Psr7\str;
 
-class Apiclub
+class Api
 {
     private $apiKey;
     private $referer;
