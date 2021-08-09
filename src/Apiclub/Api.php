@@ -56,6 +56,23 @@ class Api
         return $this->base_url;
     }
     
+    public function generate_qr($name,$vpa,$amount="",$show_name=true,$show_upi=true,$logo_url="",$logo_type="round",$description="") {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'name' => $name,
+                'vpa' => $vpa,
+                'amount' => $amount,
+                'show_name' => $show_name,
+                'show_upi' => $show_upi,
+                'logo_url' => $logo_url,
+                'logo_type' => $logo_type,
+                'description' => $description
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
     public function mybal() {
         $options = [
             'headers' => $this->getheaders(),
@@ -84,7 +101,18 @@ class Api
         $options = [
             'headers' => $this->getheaders(),
             'form_params' => [
-                'vehicleId' => $key,
+                'dl_no' => $key,
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
+    public function fetch_dl($key,$id) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'dl_no' => $key,
+                'dob' => $id
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
@@ -131,6 +159,16 @@ class Api
     }
     
     public function ip_track($key) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'ip_address' => $key,
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
+    public function check_proxy($key) {
         $options = [
             'headers' => $this->getheaders(),
             'form_params' => [
