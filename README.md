@@ -28,9 +28,17 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  ```php
  use Apiclub\Api;
  $api = new Api("<your api key>");
+ 
+ $generate_upi = $api->generate_qr('APIclub','apiclub@upi','',true,true,'','round','');
+ //Example :- $generate_upi = $api->generate_qr($name,$vpa,$amount,$show_name,$show_upi,$logo_url,$logo_type,$description);
+ 
+ $verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$aadhar_no,$zip_file_url);
+ 
  $vehicle_data = $api->vehicle_info('MH01XXXXXX');  //for vehicle info
  
  $dl_data = $api->dl_info('MH01XXXXXX');  //for driving license info
+ 
+ $fetch_dl = $api->fetch_dl('MH01XXXXXX','01-01-2000');  //for driving license alternative API
  
  $challan_data = $api->challan_info('MH01XXXXXX');  //for vehicle challan info
  
@@ -46,6 +54,8 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  echo $ip;
  
  $ip_track = $api->ip_track('123.122.122.11');  //for IP GEO Lookup API
+ 
+ $check_proxy = $api->check_proxy('123.122.122.11');  //for Check Proxy/VPN API
  
  $love_calculator = $api->love_calculator('john','rose');  //for Love Calculator
  
@@ -144,7 +154,9 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
 | v2 | Bank Account Validation | Validate the Bank Account details of your customer with small amount transfer. |
 | v2 | UPI Address Validation | Validate the UPI Address of your customer with small amount transfer. |
 | v2 | Paytm Wallet Validation | Validate the Paytm Number of your customer with small amount transfer. |
-| v1 | Vehicle Information | Vehicle Verification API can be used to fetch information of any Indian Vehicle using its Registration Number / License plate.|
+| v1 | e-KYC Offline Aadhar  | Offline Aadhar e-KYC API helps to do Paperless Aadhar Offline e-KYC with the zip file downloaded from UIDAI's Website. |
+| v1 | Generate UPI QR  | Generate UPI QR API helps you to generate professional UPI QR Stickers. |
+| v1 | Vehicle Information | Vehicle Verification API can be used to fetch information of any Indian Vehicle using its Registration Number / License plate. |
 | v1 | Driving License | Driving License Info API can be used to fetch any Indian driving license information using its License Number. |
 | v1 | Challan Information | Challan Info API can be used to fetch challan information of any Indian Vehicle using its Registration Number / License plate. |
 | v1 | Vehicle Blacklist | Vehicle Blacklist API can be used to check the blaclist status of any Indian Vehicle using its Registration Number / License plate. |
@@ -152,6 +164,7 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
 | v1 | Daily Quotes |Use Quotes API to generate random daily quotes. Quotes are of various genres. |
 | v1 | Get IP Address | Get incoming visitor's IP address instantly. |
 | v1 | IP Lookup API | Prevent Fraud on your application with IP Lookup API with all the advanced details of an IP Address. |
+| v1 | Check Proxy API | Detect if your website visitor is using Proxy / VPN and prevent fraudulent activities. |
 | v1 | Love Calculator | Integrate Love Calculator on your application. |
 | v1 | Train PNR Status | Train PNR Status API provides information about the PNR status of the booked ticket of Indian Railways. |
 | v1 | IFSC Code Lookup | Bank Info API can be used to fetch any bank's information using IFSC Code. |
