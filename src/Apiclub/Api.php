@@ -29,7 +29,7 @@ class Api
     private $referer;
 
     private $base_url = 'https://api.apiclub.in/api/v1/';
-    private $verify_ssl   = false;
+    private $verify_ssl = false;
     private $guzzle;
 
     /**
@@ -68,6 +68,19 @@ class Api
                 'logo_url' => $logo_url,
                 'logo_type' => $logo_type,
                 'description' => $description
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
+    public function verify_aadhar($mobile_number="",$passcode,$aadhar_no="",$zip_url) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'zip_url' => $zip_url,
+                'passcode' => $passcode,
+                'mobile' => $mobile_number,
+                'aadhar_no' => $aadhar_no
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
