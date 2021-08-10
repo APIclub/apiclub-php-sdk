@@ -32,11 +32,7 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  $generate_upi = $api->generate_qr('APIclub','apiclub@upi','',true,true,'','round','');
  //Example :- $generate_upi = $api->generate_qr($name,$vpa,$amount,$show_name,$show_upi,$logo_url,$logo_type,$description);
  
- //If you want to verify mobile number too with Aadhar
- $verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$aadhar_no,$zip_file_url);
- 
- //If you do not want to verify mobile number with Aadhar
- $verify_aadhar = $api->verify_aadhar($mobile_number="",$passcode,$aadhar_no="",$zip_file_url);
+ $verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$zip_file_url);
  
  $vehicle_data = $api->vehicle_info('MH01XXXXXX');  //for vehicle info
  
