@@ -73,14 +73,13 @@ class Api
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
     }
     
-    public function verify_aadhar($mobile_number="",$passcode,$aadhar_no="",$zip_url) {
+    public function verify_aadhar($mobile_number,$passcode,$zip_url) {
         $options = [
             'headers' => $this->getheaders(),
             'form_params' => [
                 'zip_url' => $zip_url,
                 'passcode' => $passcode,
-                'mobile' => $mobile_number,
-                'aadhar_no' => $aadhar_no
+                'mobile' => $mobile_number
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
