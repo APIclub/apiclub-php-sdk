@@ -9,11 +9,11 @@ $api = new Api("<your api key>");
 $generate_upi = $api->generate_qr('APIclub','apiclub@upi','',true,true,'','round','');
 //Example :- $generate_upi = $api->generate_qr($name,$vpa,$amount,$show_name,$show_upi,$logo_url,$logo_type,$description);
  
-$verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$zip_file_url);
+$verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$zip_file_url); //for aadhar verification
+
+$verify_pan = $api->verify_pan($pan_no); //for pan verification
 
 $vehicle_data = $api->vehicle_info('MH01XXXXXX');  //for vehicle info
-
-$dl_data = $api->dl_info('MH01XXXXXX');  //for driving license info
 
 $fetch_dl = $api->fetch_dl('MH01XXXXXX','01-01-2000');  //for driving license alternative API
 
@@ -23,8 +23,6 @@ $blacklist_data = $api->blacklist_info('MH01XXXXXX');  //for vehicle blacklist i
 
 $rto_data = $api->rto_info('MH01');  //for rto info
 
-$daily_quotes = $api->daily_quotes('en');  //for Daily Quotes API
-
 $get_ip = $api->get_ip();  //Get IP Address
                      or
 $ip = json_decode(file_get_contents("https://api.apiclub.in/api/v1/getip"),true)['response'];
@@ -33,8 +31,6 @@ echo $ip;
 $ip_track = $api->ip_track('123.122.122.11');  //for IP GEO Lookup API
 
 $check_proxy = $api->check_proxy('123.122.122.11');  //for Check Proxy/VPN API
-
-$love_calculator = $api->love_calculator('john','rose');  //for Love Calculator
 
 $pnr_status = $api->pnr_status('1234567890');  //for PNR Status info
 
