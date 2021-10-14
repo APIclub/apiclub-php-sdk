@@ -85,6 +85,16 @@ class Api
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
     }
     
+    public function verify_pan($pan_no) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'pan_no' => $pan_no
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
     public function mybal() {
         $options = [
             'headers' => $this->getheaders(),
@@ -104,16 +114,6 @@ class Api
             'headers' => $this->getheaders(),
             'form_params' => [
                 'vehicleId' => $key,
-            ]
-        ];
-        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
-    }
-    
-    public function dl_info($key) {
-        $options = [
-            'headers' => $this->getheaders(),
-            'form_params' => [
-                'dl_no' => $key,
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
@@ -185,17 +185,6 @@ class Api
             'headers' => $this->getheaders(),
             'form_params' => [
                 'ip_address' => $key,
-            ]
-        ];
-        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
-    }
-    
-    public function love_calculator($fname,$sname) {
-        $options = [
-            'headers' => $this->getheaders(),
-            'form_params' => [
-                'fname' => $fname,
-                'sname' => $sname
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
