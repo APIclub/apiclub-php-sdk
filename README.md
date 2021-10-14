@@ -32,21 +32,19 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  $generate_upi = $api->generate_qr('APIclub','apiclub@upi','',true,true,'','round','');
  //Example :- $generate_upi = $api->generate_qr($name,$vpa,$amount,$show_name,$show_upi,$logo_url,$logo_type,$description);
  
- $verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$zip_file_url);
+ $verify_aadhar = $api->verify_aadhar($mobile_number,$passcode,$zip_file_url); //for aadhar verification
+ 
+ $verify_pan = $api->verify_pan($pan_no); //for pan verification
  
  $vehicle_data = $api->vehicle_info('MH01XXXXXX');  //for vehicle info
  
- $dl_data = $api->dl_info('MH01XXXXXX');  //for driving license info
- 
- $fetch_dl = $api->fetch_dl('MH01XXXXXX','01-01-2000');  //for driving license alternative API
+ $fetch_dl = $api->fetch_dl('MH01XXXXXX','01-01-2000');  //for driving license
  
  $challan_data = $api->challan_info('MH01XXXXXX');  //for vehicle challan info
  
  $blacklist_data = $api->blacklist_info('MH01XXXXXX');  //for vehicle blacklist info
  
  $rto_data = $api->rto_info('MH01');  //for rto info
- 
- $daily_quotes = $api->daily_quotes('en');  //for Daily Quotes API
  
  $get_ip = $api->get_ip();  //Get IP Address
                       or
@@ -56,8 +54,6 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  $ip_track = $api->ip_track('123.122.122.11');  //for IP GEO Lookup API
  
  $check_proxy = $api->check_proxy('123.122.122.11');  //for Check Proxy/VPN API
- 
- $love_calculator = $api->love_calculator('john','rose');  //for Love Calculator
  
  $pnr_status = $api->pnr_status('1234567890');  //for PNR Status info
  
@@ -154,6 +150,8 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
 | v2 | Bank Account Validation | Validate the Bank Account details of your customer with small amount transfer. |
 | v2 | UPI Address Validation | Validate the UPI Address of your customer with small amount transfer. |
 | v2 | Paytm Wallet Validation | Validate the Paytm Number of your customer with small amount transfer. |
+| v2 | UPI Payment Gateway | Accept Payments hassle free through UPI Payment Gateway on your website. |
+| v1 | PAN Verification  | Verify PAN Card Holder details from Pan Number. |
 | v1 | e-KYC Offline Aadhar  | Offline Aadhar e-KYC API helps to do Paperless Aadhar Offline e-KYC with the zip file downloaded from UIDAI's Website. |
 | v1 | Generate UPI QR  | Generate UPI QR API helps you to generate professional UPI QR Stickers. |
 | v1 | Vehicle Information | Vehicle Verification API can be used to fetch information of any Indian Vehicle using its Registration Number / License plate. |
@@ -161,11 +159,9 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
 | v1 | Challan Information | Challan Info API can be used to fetch challan information of any Indian Vehicle using its Registration Number / License plate. |
 | v1 | Vehicle Blacklist | Vehicle Blacklist API can be used to check the blaclist status of any Indian Vehicle using its Registration Number / License plate. |
 | v1 | RTO Information | Get Information of any Indian RTO. |
-| v1 | Daily Quotes |Use Quotes API to generate random daily quotes. Quotes are of various genres. |
 | v1 | Get IP Address | Get incoming visitor's IP address instantly. |
 | v1 | IP Lookup API | Prevent Fraud on your application with IP Lookup API with all the advanced details of an IP Address. |
 | v1 | Check Proxy API | Detect if your website visitor is using Proxy / VPN and prevent fraudulent activities. |
-| v1 | Love Calculator | Integrate Love Calculator on your application. |
 | v1 | Train PNR Status | Train PNR Status API provides information about the PNR status of the booked ticket of Indian Railways. |
 | v1 | IFSC Code Lookup | Bank Info API can be used to fetch any bank's information using IFSC Code. |
 | v1 | GSTIN Verification API | GSTN Info API provides basic information of GSTN. |
