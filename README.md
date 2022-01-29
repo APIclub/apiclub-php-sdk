@@ -57,7 +57,15 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  
  $pnr_status = $api->pnr_status('1234567890');  //for PNR Status info
  
+ $search_train = $api->search_train('02802');  //for Train Search API
+
+ $live_train = $api->live_train('02802','23-10-2021');  //for Live Train Status API
+ 
  $bank_info = $api->bank_info('ICICI000001');  //for IFSC Code Lookup info
+ 
+ $upi_info = $api->vpa_info('apiclub@axis');  //for UPI Info API
+ 
+ $pincode_info = $api->pincode_info('110001');  //for Pincode Info API
  
  $gstin_info = $api->gstin_info('22AAAAA0XXXXXX');  //for GST Number Verification API
  
@@ -69,74 +77,9 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
  
  $currency = $api->currency('INR','USD');  //for INR to USD conversion
  
- $generate_invoice = $api->generate_invoice('
-                {
-                    "id": "1", //required (alphanumeric or numeric)
-                    "currency": "USD", //required
-                    "lang": "en", //optional (default - en)
-                    "date": 1619392531, //optional (default - current date time will be considered)
-                    "due_date": 1619392531, //required (unix time)
-                    "payment_status": "false",  //optional (boolean, default - false , Unpaid)
-                    "payment_url": "",  //optional
-                    "decimals": 2,  //optional (Integer for decimal places on amount)
-                    "notes": "Lorem ipsum dolor sit amet.",  //optional additional notes
-                    "items": [
-                        //atleast 1 item array required
-                        {
-                            "title": "Item Name", //required
-                            "description": "Item Description",  //optional
-                            "price": 42, //required (integer)
-                            "quantity": 1,  //optional (integer)
-                            "tax": 5 //required (integer)
-                        },
-                        //optional item 2 array
-                        {
-                            "title": "Item Name", //required
-                            "description": "Item Description",  //optional
-                            "price": 42, //required (integer)
-                            "quantity": 1,  //optional (integer)
-                            "tax": 5 //required (integer)
-                        }
-                    ],
-                    //customer details required
-                    "customer": {
-                        "name": "John Doe", //required
-                        "address_line_1": "Address Line 1", //required
-                        "address_line_2": "Address Line 2",  //optional
-                        "address_line_3": "City",  //optional
-                        "address_line_4": "Country",  //optional
-                        "phone": "1234567890",  //optional
-                        "email": "info@gmail.com"  //optional
-                    },
-                    // company details required
-                    "company": {
-                        "name": "Name", //required
-                        "address_line_1": "Address Line 1", //required
-                        "address_line_2": "Address Line 2",  //optional
-                        "address_line_3": "City", //optional
-                        "address_line_4": "Country", //optional
-                        "phone": "1234567890", //optional
-                        "email": "info@email.com", //optional
-                        "logo_url": "https://apiclub.in/assets/images/logo.png", //optional logo url
-                        //optional company additional information
-                        "other": [
-                            "Others Information",
-                            {
-                                "title": "Business hours",
-                                "content": "9am - 6pm"
-                            }
-                        ]
-                    }
-                }
- ');  //for Invoice Generator API
- 
  $operator = $api->operator('7777777777');  //for Mobile Operator Info API
  
  $check_dns = $api->check_dns('github.com');  //for DNS Lookup API
- 
- $send_sms = $api->send_sms('+917777777777','This is a test message to send via API');  //Bulk SMS API
- 
- $sms_status = $api->sms_status('xxxxxxxx');  //for SMS Status API 
  ```
 
 ## List of all APIs offered by APIclub
@@ -145,12 +88,13 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
 |:--------------:|:------------------:|---------------------|
 | v2 | Bank Transfer API | Disburse funds to your customer's bank account using Account Number and IFSC Code. |
 | v2 | UPI Payouts API | Disburse funds to your customer's UPI / VPA Address using UPI ID. |
-| v2 | Paytm Wallet Payouts API | Disburse funds to your customer's Paytm Wallet using Paytm Registered Mobile Number. |
 | v2 | Payout Status API | Check Bank Account / UPI / Paytm disbursal status quickly. |
 | v2 | Bank Account Validation | Validate the Bank Account details of your customer with small amount transfer. |
 | v2 | UPI Address Validation | Validate the UPI Address of your customer with small amount transfer. |
-| v2 | Paytm Wallet Validation | Validate the Paytm Number of your customer with small amount transfer. |
 | v2 | UPI Payment Gateway | Accept Payments hassle free through UPI Payment Gateway on your website. |
+| v2 | UPI Collect | Send Collect request to your Customer's VPA Address. |
+| v2 | UPI QR | Create dynamic UPI QR Code for accepting payments and realtime payment notification. |
+| v2 | Dynamic UPI | Create dynamic UPI ID for accpeting payments from your customers. |
 | v1 | PAN Verification  | Verify PAN Card Holder details from Pan Number. |
 | v1 | e-KYC Offline Aadhar  | Offline Aadhar e-KYC API helps to do Paperless Aadhar Offline e-KYC with the zip file downloaded from UIDAI's Website. |
 | v1 | Generate UPI QR  | Generate UPI QR API helps you to generate professional UPI QR Stickers. |
@@ -165,15 +109,16 @@ Note :- You must have an verified APIclub Account and API Key. To get your api k
 | v1 | Train PNR Status | Train PNR Status API provides information about the PNR status of the booked ticket of Indian Railways. |
 | v1 | IFSC Code Lookup | Bank Info API can be used to fetch any bank's information using IFSC Code. |
 | v1 | GSTIN Verification API | GSTN Info API provides basic information of GSTN. |
-| v1 | Fuel Price API | Fuel Info API provides information of latest fuel price of various cities and states of India. This API includes diesel and petrol prices. |
+| v1 | UPI Info  | Get basic information of the UPI with its registered PSP. |
+| v1 | Pincode Info  | Get information related to Postal / Pincode Code which includes its City, State, Division, Area, Post Office Name etc. |
+| v1 | Fuel Price API | Fuel Info API provides information of latest fuel price of various cities and states of India. This API includes diesel and petrol prices. 
 | v1 | Fastag Information | Fastag Info API can be used to fetch Fastag information of any Indian Vehicle using its Registration Number / License plate. |
 | v1 | Stock Information API | Stock Price API can be used to fetch any NSE/BSE real time Stocks Price data with the company name. |
 | v1 | Currency Exchange API | Currency Exchange API lets you convert your currency to any currency easily. |
 | v1 | Invoice Generator | Generate Invoice for your client calling simple API for free. |
 | v1 | Mobile Operator | Mobile Operator Exchange API lets you find any Indian Mobile Number Operator details quickly. |
 | v1 | DNS Lookup API | DNS Checker API helps you to fetch any Hostname DNS records easily. |
-| v1 | Send SMS | Send BULK SMS without any DLT registeration
-| v1 | Check SMS Status | Fetch the status of sent SMS by passing SMS ID received on response of Send SMS API. |
+
 
 ## Help and Docs
 
