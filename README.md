@@ -8,7 +8,7 @@ The recommended way to install this library is through
 [Composer](http://getcomposer.org).
 
 ```bash
-composer require apiclub/php-sdk
+composer require apiclub/apiclub-php-sdk
 ```
 
 After installing, you need to require Composer's autoloader:
