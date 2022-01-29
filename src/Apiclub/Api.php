@@ -56,6 +56,36 @@ class Api
         return $this->base_url;
     }
     
+    public function vpa_info($vpa) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'vpa' => $vpa
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
+    public function pincode_info($pincode) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'pincode' => $pincode
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
+    public function pnr_status($pnr_no) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'pnr_no' => $pnr_no
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
     public function generate_qr($name,$vpa,$amount="",$show_name=true,$show_upi=true,$logo_url="",$logo_type="round",$description="") {
         $options = [
             'headers' => $this->getheaders(),
@@ -130,11 +160,12 @@ class Api
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
     }
     
-    public function challan_info($key) {
+    public function challan_info($key,$chassis) {
         $options = [
             'headers' => $this->getheaders(),
             'form_params' => [
                 'vehicleId' => $key,
+                'chassis' => $chassis
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
@@ -155,16 +186,6 @@ class Api
             'headers' => $this->getheaders(),
             'form_params' => [
                 'rto_code' => $key,
-            ]
-        ];
-        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
-    }
-    
-    public function daily_quotes($key = 'en') {
-        $options = [
-            'headers' => $this->getheaders(),
-            'form_params' => [
-                'lang' => $key,
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
@@ -284,27 +305,6 @@ class Api
             'headers' => $this->getheaders(),
             'form_params' => [
                 'domain' => $key,
-            ]
-        ];
-        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
-    }
-    
-    public function send_sms($to,$msg) {
-        $options = [
-            'headers' => $this->getheaders(),
-            'form_params' => [
-                'to' => $to,
-                'msg' => $msg
-            ]
-        ];
-        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
-    }
-    
-    public function sms_status($id) {
-        $options = [
-            'headers' => $this->getheaders(),
-            'form_params' => [
-                'msg_id' => $id
             ]
         ];
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
