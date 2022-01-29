@@ -310,6 +310,27 @@ class Api
         return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
     }
     
+    public function search_train($train_no) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'train_no' => $train_no,
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
+    public function live_train($train_no,$doj) {
+        $options = [
+            'headers' => $this->getheaders(),
+            'form_params' => [
+                'train_no' => $train_no,
+                'doj' => $doj
+            ]
+        ];
+        return $this->send($this->base_url.__FUNCTION__,'POST', $options, true);
+    }
+    
     protected function send(string $uri, string $method = 'GET', $options, bool $returnResponseBodyOnly = true)
     {
         if (is_null($this->base_url)) {
